@@ -9,6 +9,8 @@ import {
 
 import { globalStyles } from "../styles/globalStyles";
 
+import Card from "../components/Card";
+
 const Home = ({ navigation }) => {
   const [reviews, setReviews] = useState([
     { title: "Ali", rating: 5, body: "lorem ipsum", key: "1" },
@@ -24,7 +26,9 @@ const Home = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => navigation.navigate("ReviewDetails", item)}
           >
-            <Text style={globalStyles.titleText}>{item.title}</Text>
+            <Card>
+              <Text style={globalStyles.titleText}>{item.title}</Text>
+            </Card>
           </TouchableOpacity>
         )}
       />
